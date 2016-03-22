@@ -242,13 +242,13 @@ fn ac(v: &Vec<&str>, src: &SocketAddr, state: &State) -> std::io::Result<()>{
                 }
             }
             result = result + ":" + &v4.port().to_string();
-            println!("{}.{}.{}.{}", octets[0],octets[1],octets[2],octets[3]);
+           // println!("{}.{}.{}.{}", octets[0],octets[1],octets[2],octets[3]);
         },
         SocketAddr::V6(_) => {
             println!("Ok, I honestly have no idea how IPv6 works...");
         }
     }
-
+    println!("{:?}", result);
     try!(state.socket.send_to(result.as_bytes(), newClientSocketAddr));
 
     Ok(())
