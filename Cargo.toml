@@ -1,0 +1,7 @@
+[package]
+name = "icebreaker"
+version = "0.1.0"
+authors = ["Scott McBee <scott@mcb.ee>"]
+
+[dependencies]
+rand = "0.3"
