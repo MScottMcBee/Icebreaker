@@ -155,7 +155,6 @@ fn aa(v: &Vec<&str>, src: &SocketAddr, state: &mut State) -> std::io::Result<()>
         id: id, 
         addrs: *src,
     };
-
     state.add_server(info);
     println!("{:?}", result);
 
@@ -242,6 +241,7 @@ fn ac(v: &Vec<&str>, src: &SocketAddr, state: &State) -> std::io::Result<()>{
                     result = result + ".";
                 }
             }
+            result = result + ":" + &v4.port().to_string();
             println!("{}.{}.{}.{}", octets[0],octets[1],octets[2],octets[3]);
         },
         SocketAddr::V6(_) => {
